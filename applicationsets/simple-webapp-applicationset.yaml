@@ -7,8 +7,7 @@ spec:
   generators:
     - clusters:
         selector:
-          matchLabels:
-            env: prod
+          matchLabels: {}
         values:
           branch: main
   template:
@@ -19,12 +18,12 @@ spec:
     spec:
       project: default
       sources:
-        - repoURL: git@github.com:PacktPublishing/Implementing-GitOps-with-Kubernetes.git
+        - repoURL: https://github.com/phrankson/gitops-k8s-deployments-book-weather-app.git
           targetRevision: "{{values.branch}}"
-          path: ./chapter05/chapter-5-the-app-of-apps-approach/app-of-app/simple-webapp
+          path: applicationsets/simple-webapp
       destination:
         name: "{{name}}"
-        namespace: "argocd"
+        namespace: "simple-webapp"
       syncPolicy:
         automated:
           prune: false
