@@ -13,7 +13,7 @@ spec:
         app: simple-webapp-1
     spec:
       containers:
-        - image: "ghcr.io/la-cc/simple-webapp:1.0.1"
+        - image: franksonjr/weatherapp:main
           name: simple-webapp-1
           resources:
             requests:
